@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Uttarakhand Radio — Dev Bhoomi FM</title>
+  <meta name="description" content="Live-feel internet radio streaming Garhwali, Kumaoni and Pahadi folk music from Uttarakhand." />
+  <link rel="preconnect" href="https://archive.org" crossorigin />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><text y='52' font-size='54'>🏔️</text></svg>" />
+</head>
+<body>
+  <!-- Layered mountain backdrop -->
+  <div class="scene" aria-hidden="true">
+    <div class="sky"></div>
+    <div class="sun"></div>
+    <svg class="range range-3" viewBox="0 0 1440 400" preserveAspectRatio="none">
+      <path d="M0,400 L0,260 L120,120 L220,200 L320,80 L440,220 L560,140 L700,240 L820,110 L960,210 L1080,150 L1200,230 L1320,140 L1440,220 L1440,400 Z" />
+    </svg>
+    <svg class="range range-2" viewBox="0 0 1440 400" preserveAspectRatio="none">
+      <path d="M0,400 L0,300 L90,200 L200,280 L310,180 L430,290 L540,210 L670,300 L800,190 L920,280 L1050,220 L1170,300 L1290,210 L1440,290 L1440,400 Z" />
+    </svg>
+    <svg class="range range-1" viewBox="0 0 1440 400" preserveAspectRatio="none">
+      <path d="M0,400 L0,340 L120,280 L240,330 L360,260 L480,320 L600,270 L720,330 L840,260 L960,320 L1080,270 L1200,330 L1320,280 L1440,340 L1440,400 Z" />
+    </svg>
+    <div class="mist"></div>
+  </div>
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">🏔️</div>
+      <div>
+        <div class="brand-name">Uttarakhand Radio</div>
+        <div class="brand-tag">Dev Bhoomi FM · देवभूमि की धुन</div>
+      </div>
+    </div>
+    <div class="live-chip" title="Streaming live">
+      <span class="dot"></span> ON AIR
+    </div>
+  </header>
+
+  <main class="stage">
+    <section class="player" aria-label="Radio player">
+      <div class="disc" id="disc" aria-hidden="true">
+        <div class="disc-inner">
+          <div class="disc-center">🎵</div>
+        </div>
+      </div>
+
+      <div class="player-body">
+        <div class="player-kicker">
+          <span class="freq">107.5 FM</span>
+          <span class="sep">•</span>
+          <span id="kickerLabel">Tune in</span>
+        </div>
+        <h1 class="track-title" id="trackTitle">Dev Bhoomi FM</h1>
+        <div class="track-artist" id="trackArtist">Press play to listen live</div>
+
+        <div class="controls">
+          <button class="ctrl primary" id="btnPlay" title="Play / Pause" aria-label="Play or pause">
+            <svg id="iconPlay" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            <svg id="iconPause" viewBox="0 0 24 24" style="display:none"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+          </button>
+          <div class="volume">
+            <svg viewBox="0 0 24 24" class="vol-ico"><path d="M3 10v4h4l5 5V5L7 10H3zm13.5 2A4.5 4.5 0 0 0 14 8.05v7.9A4.5 4.5 0 0 0 16.5 12z"/></svg>
+            <input id="volume" type="range" min="0" max="1" step="0.01" value="0.85" aria-label="Volume" />
+          </div>
+        </div>
+
+        <audio id="audio" preload="none" crossorigin="anonymous"></audio>
+
+        <div class="marquee" aria-hidden="true">
+          <div class="marquee-track" id="marquee">देवभूमि उत्तराखंड &nbsp;·&nbsp; Garhwali &amp; Kumaoni folk &nbsp;·&nbsp; Pahadi Sanskriti &nbsp;·&nbsp; 107.5 FM Dev Bhoomi &nbsp;·&nbsp; live from the hills</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div>Made with ❤️ for the hills · Uttarakhand Radio is a non-commercial tribute to Pahadi culture.</div>
+    <div class="foot-links">
+      <a href="#" id="aboutLink">About</a>
+    </div>
+  </footer>
+
+  <dialog id="aboutDlg">
+    <form method="dialog">
+      <h3>About Uttarakhand Radio</h3>
+      <p>Uttarakhand Radio (Dev Bhoomi FM) is a personal, non-commercial web radio that streams folk music from the Indian Himalayan state of Uttarakhand — Garhwali, Kumaoni and wider Pahadi traditions.</p>
+      <p>All recordings are sourced from the public <strong>Internet Archive</strong>. Credit belongs to the original performers, researchers and institutions (IGRMS, CCRT, ICCR and independent uploaders).</p>
+      <p>If you are an artist or rights-holder and would like a recording removed, please open an issue on the GitHub repo.</p>
+      <menu><button value="ok">Close</button></menu>
+    </form>
+  </dialog>
+
+  <script src="playlist.js"></script>
+  <script src="radio.js"></script>
+</body>
+</html>
